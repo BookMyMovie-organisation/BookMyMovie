@@ -9,27 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppController = void 0;
+exports.HealthController = void 0;
 const common_1 = require("@nestjs/common");
-const app_service_1 = require("./app.service");
-let AppController = class AppController {
-    appService;
-    constructor(appService) {
-        this.appService = appService;
-    }
-    getHello() {
-        return this.appService.getHello();
+const swagger_1 = require("@nestjs/swagger");
+let HealthController = class HealthController {
+    check() {
+        return {
+            status: 'ok',
+            service: 'bookmymovie-api',
+            timestamp: new Date().toISOString(),
+        };
     }
 };
-exports.AppController = AppController;
+exports.HealthController = HealthController;
 __decorate([
     (0, common_1.Get)(),
+    (0, swagger_1.ApiOperation)({ summary: "Vérifier l'état du service" }),
+    (0, swagger_1.ApiOkResponse)({ description: 'Le service est disponible.' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "getHello", null);
-exports.AppController = AppController = __decorate([
-    (0, common_1.Controller)(),
-    __metadata("design:paramtypes", [app_service_1.AppService])
-], AppController);
-//# sourceMappingURL=app.controller.js.map
+    __metadata("design:returntype", void 0)
+], HealthController.prototype, "check", null);
+exports.HealthController = HealthController = __decorate([
+    (0, swagger_1.ApiTags)('Health'),
+    (0, common_1.Controller)('health')
+], HealthController);
+//# sourceMappingURL=health.controller.js.map
