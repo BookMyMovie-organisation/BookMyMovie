@@ -2,8 +2,15 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import Joi from 'joi';
+import { CollectModule } from './collect/collect.module';
 import databaseConfig from './config/database.config';
 import { HealthModule } from './health/health.module';
+import { ListsModule } from './lists/lists.module';
+import { MoviesModule } from './movies/movies.module';
+import { PipelineModule } from './pipeline/pipeline.module';
+import { StatsModule } from './stats/stats.module';
+import { UsersModule } from './users/users.module';
+import { WatchlistModule } from './watchlist/watchlist.module';
 
 @Module({
   imports: [
@@ -27,6 +34,13 @@ import { HealthModule } from './health/health.module';
       }),
     }),
     HealthModule,
+    PipelineModule,
+    CollectModule,
+    MoviesModule,
+    ListsModule,
+    StatsModule,
+    UsersModule,
+    WatchlistModule,
   ],
 })
 export class AppModule {}
