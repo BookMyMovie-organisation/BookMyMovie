@@ -26,5 +26,4 @@ export function configureApp(app: INestApplication): void {
   );
 
   app.useGlobalFilters(new ProblemDetailsFilter());
-
 }
