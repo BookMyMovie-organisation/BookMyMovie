@@ -23,3 +23,5 @@ export type GoldNowPlayingDocument = HydratedDocument<GoldNowPlaying>;
 
 export const GoldNowPlayingSchema =
   SchemaFactory.createForClass(GoldNowPlaying);
+
+GoldNowPlayingSchema.index({ movieId: 1 }, { unique: true });

@@ -49,3 +49,5 @@ export class PipelineRun {
 export type PipelineRunDocument = HydratedDocument<PipelineRun>;
 
 export const PipelineRunSchema = SchemaFactory.createForClass(PipelineRun);
+
+PipelineRunSchema.index({ startedAt: -1 });

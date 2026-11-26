@@ -22,3 +22,5 @@ export class GoldGenre {
 export type GoldGenreDocument = HydratedDocument<GoldGenre>;
 
 export const GoldGenreSchema = SchemaFactory.createForClass(GoldGenre);
+
+GoldGenreSchema.index({ genre: 1 }, { unique: true });

@@ -26,3 +26,6 @@ export type DailyListSilverDocument = HydratedDocument<DailyListSilver>;
 
 export const DailyListSilverSchema =
   SchemaFactory.createForClass(DailyListSilver);
+
+DailyListSilverSchema.index({ movieId: 1, date: 1, list: 1 }, { unique: true });
+DailyListSilverSchema.index({ date: 1 });

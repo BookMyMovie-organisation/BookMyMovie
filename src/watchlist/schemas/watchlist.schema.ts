@@ -20,3 +20,5 @@ export class Watchlist {
 export type WatchlistDocument = HydratedDocument<Watchlist>;
 
 export const WatchlistSchema = SchemaFactory.createForClass(Watchlist);
+
+WatchlistSchema.index({ userId: 1 }, { unique: true });

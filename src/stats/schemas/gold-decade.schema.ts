@@ -19,3 +19,5 @@ export class GoldDecade {
 export type GoldDecadeDocument = HydratedDocument<GoldDecade>;
 
 export const GoldDecadeSchema = SchemaFactory.createForClass(GoldDecade);
+
+GoldDecadeSchema.index({ decade: 1 }, { unique: true });

@@ -22,3 +22,5 @@ export class GoldTrending {
 export type GoldTrendingDocument = HydratedDocument<GoldTrending>;
 
 export const GoldTrendingSchema = SchemaFactory.createForClass(GoldTrending);
+
+GoldTrendingSchema.index({ movieId: 1 }, { unique: true });

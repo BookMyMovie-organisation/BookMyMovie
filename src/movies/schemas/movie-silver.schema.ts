@@ -73,3 +73,11 @@ export class MovieSilver {
 export type MovieSilverDocument = HydratedDocument<MovieSilver>;
 
 export const MovieSilverSchema = SchemaFactory.createForClass(MovieSilver);
+
+MovieSilverSchema.index({ genres: 1 });
+MovieSilverSchema.index({ year: 1 });
+MovieSilverSchema.index({ language: 1 });
+MovieSilverSchema.index({ voteAverage: -1 });
+MovieSilverSchema.index({ runtime: 1 });
+MovieSilverSchema.index({ popularity: -1 });
+MovieSilverSchema.index({ title: 'text' });

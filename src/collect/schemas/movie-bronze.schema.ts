@@ -20,3 +20,6 @@ export class MovieBronze {
 export type MovieBronzeDocument = HydratedDocument<MovieBronze>;
 
 export const MovieBronzeSchema = SchemaFactory.createForClass(MovieBronze);
+
+MovieBronzeSchema.index({ runId: 1 });
+MovieBronzeSchema.index({ fetchedAt: -1 });

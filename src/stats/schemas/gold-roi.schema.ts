@@ -19,3 +19,5 @@ export class GoldRoi {
 export type GoldRoiDocument = HydratedDocument<GoldRoi>;
 
 export const GoldRoiSchema = SchemaFactory.createForClass(GoldRoi);
+
+GoldRoiSchema.index({ genre: 1, budgetBracket: 1 }, { unique: true });

@@ -28,3 +28,8 @@ export type DailyListBronzeDocument = HydratedDocument<DailyListBronze>;
 
 export const DailyListBronzeSchema =
   SchemaFactory.createForClass(DailyListBronze);
+
+DailyListBronzeSchema.index(
+  { list: 1, date: 1, region: 1, page: 1 },
+  { unique: true },
+);
